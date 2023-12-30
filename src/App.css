@@ -1,38 +1,210 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,body{
+  width: 100%;
+  height: 100%;
+  color: var(--font-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* body::-webkit-scrollbar{
+  display: none;
+} */
+
+
+
+:root{
+  --primary-color: #E1DFDD;
+  /* --primary-color: #E1DFDD; */
+  --font-color: #000000;
+}
+@font-face {
+  font-family: "ppneue";
+  src: url(../public/PPNeueMontreal-Medium.f9b3b92f.woff2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* .mouse-follower{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 9999;
+  transition: all .1s ease-out;
+} */
+
+.main{
+  background-color: var(--primary-color);
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+
+}
+.header{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  padding: 30px 10px 0 10px;
+
+}
+.name-div {
+  display: flex;
+  /* align-items: center; */
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 5px;
+
+}
+.side-navs{
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+.profile-icon{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* background-image: url(./1.png); */
+  background-size: cover;
+  margin-top: -2px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.side-navs a {
+  color: var(--font-color);
+}
+.header h2{
+  font-size: 22px;
+  font-family: "ppneue";
+  font-weight: bold;
+  color: var(--font-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-heading h2 {
+  display: block;
+  height: 130px;
+  overflow: hidden;
+  padding-left: 20px;
+  font-size: 126px; 
+  font-family: "ppneue";
+  line-height: 150px;
+  font-weight: 500;
+  margin-bottom: -20px;
+}
+.main-heading .heading-continer{
+  padding: 50px 50px;
+  background-color: yellow;
+}
+
+
+.main-heading h2 span{
+  display: inline-block;  /*could also be inline flex */
+  margin-top: 105px;
+  /* margin-right: -40px; */
+}
+
+
+.svg{
+  background-color: rebeccapurple;
+  width: 30px;
+  height: 30px;
+}
+
+
+.effect-container{
+  width: 100%;
+  height: 300px;
+  margin-top: 300px;
+  position: relative;
+}
+
+.images-parent{
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  right: 20px;
+  overflow: hidden;
+}
+
+.imagescontainer{
+  width: 100%;
+  height: 100%;
+}
+img{
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  object-fit: cover;
+  transform-origin: 100% 50%;
+  transform: rotate(-85deg);
+  transition:  all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.nameheading{
+  width: 100%;
+  height: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 35vh;
+  /* background-color: orange; */
+}
+
+.nameheading div{
+  padding: 0 100px;
+ 
+}  
+.nameheading .name h2{
+  font-size: 126px;
+  font-family: "ppneue";
+  font-weight: 400;
+  line-height: .8;
+}
+
+
+.quote .down-arrow{
+  font-size: 50px;
+}
+.quote h2{
+  font-family: "ppneue";
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+
+/* quote section after name */
+
+.quotesection{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 180px;
+}
+.quotesection div{
+  padding: 0 20px;
+  width: 100%;
+  /* height: 350px; */
+
+}
+.quotesection .linebox div{
+  height: 50px;
+  /* background-color: greenyellow; */
+  overflow: hidden;
+}
+.quotesection .linebox div h2{
+  /* background-color: #fff; */
+  font-size: 40px;
+  font-family: "ppneue";
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 50px;
 }
