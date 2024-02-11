@@ -6,7 +6,7 @@ function Header(){
         <div className="header">
     <div className="name-div">
         <div className="profile-icon"></div>
-        <h2>Shazil Khan</h2>
+        <h2>M Shazil Khan</h2>
     </div>
     <div>
         <h2>Undergraduate</h2>

@@ -8,7 +8,7 @@ import WorkSection from './components/worksection';
 
 let works = [
   {
-      url:  './images/01.jpg'
+      url:  './images/browsemovies.png'
   },
   {
       url:  './images/04.jpg'
@@ -36,7 +36,7 @@ let works = [
   // },
 ]
 
-let item = {url: './images/04.jpg'}
+let item = {url: './images/browsemovies.PNG'}
 function App() {
   return (
     <>

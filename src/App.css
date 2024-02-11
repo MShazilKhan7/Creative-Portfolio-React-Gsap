@@ -1,3 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 html {
   overflow-y: scroll;
   height: 100%;
@@ -13,12 +20,10 @@ body {
   margin: 0;
 }
 
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body::-webkit-scrollbar{
+  display: none;
 }
+
 
 /* html,body{
   width: 100%;
@@ -189,8 +194,6 @@ body {
 
 
 /* selected work section */
-
-
 .container{
   width: 400vw;
   height: 100vh;
@@ -205,16 +208,15 @@ body {
 }
 
 .project{
-  width: 13%;
-  height: 80%;
+  width: 17%;
+  height: 85%;
 }
 
 .project .description{
-  padding: .5rem 2rem 0 .3rem;
+  padding: .8rem 2rem 0 .3rem;
   display: flex;
   align-items: center;
   text-align: center;
-  /* background-color: orange; */
   font-size: 2vw;
   color: white;
   font-size: "ppneue";
@@ -224,28 +226,49 @@ body {
   font-size: 28vw;
   font-weight: 200;
 }
-.project .image{
+.project .project-images{
   width: 100%;
   height: 80%;
+  overflow: hidden;
+  position: relative;
+}
+/* imamge div. */
+.project-images .image{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease;
+  
 }
 
 .project .image img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position:left;
+}
+.controllers{
+  width: 100%;
+  display: none;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  color: #FFF;
+  font-size: 2rem;
+  padding: 0 .5rem;
+}
+.controllers .left,.right{
+  cursor: pointer;
 }
 
-.lastContainer {
+.image:hover .controllers{
   display: flex;
-  height: 100vh;
-  background: yellow;
+}
+.image:hover{
+  opacity: .9;
 }
 
-
-/* .panel1{
-  width: 100vw;
-  height: 100vh;
-} */
 
 .panel{
   width: 100vw;
@@ -255,7 +278,7 @@ body {
 
 /* */
 .red-div{
-  /* padding: 2rem 4rem; */
+  padding: 2rem 4rem;
   display: flex;
   align-items: center;
   gap: 15px;

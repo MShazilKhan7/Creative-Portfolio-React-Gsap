@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useRef } from "react";
-
 import gsap from "gsap";
 import { TbJewishStarFilled } from "react-icons/tb";
 import { FaStarOfLife } from "react-icons/fa";
@@ -14,7 +13,7 @@ function MainHeading(params) {
         gsap.to(mainHeadingRef.current.querySelectorAll(".firstheading span"), {
             y: "-115px",
             duration: 0.5,
-            stagger: 0.1,
+            stagger: 0.06,
             // ease: "expo",
           });
     })
