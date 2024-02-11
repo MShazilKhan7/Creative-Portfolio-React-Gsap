@@ -4,6 +4,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 // this section is after name section
 gsap.registerPlugin(ScrollTrigger);
+
 function Quotation(params) {
     const quoteContent  = useRef();
     const animateQuote = useCallback(()=>{
@@ -23,7 +24,7 @@ function Quotation(params) {
             
         })
     })
-    console.log(quoteContent)
+
     useEffect(()=>{
         animateQuote();
     }, [animateQuote])
