@@ -5,11 +5,10 @@ import Name from './components/namesection';
 import Quotation from './components/quotesection';
 import WorkSection from './components/worksection';
 import Contact from './components/contactsection';
-import Follower from './components/mousefollower';
+
 function App() {
   return (
     <>
-      <Follower/>
       <Header/>
       <MainHeading/>
       <Name /> 

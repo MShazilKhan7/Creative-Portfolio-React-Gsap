@@ -13,7 +13,6 @@ function Quotation(params) {
             stagger: 0.2,
             scrollTrigger: {
                 trigger: ".linebox h2",
-                markers: true,
                 scroller: "body",
                 // start: 'top center', 
               },

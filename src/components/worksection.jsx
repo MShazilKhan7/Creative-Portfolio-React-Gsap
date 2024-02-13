@@ -89,35 +89,36 @@ let work = [
 
 
 export default function WorkSection() {
-  const component = useRef();
-  const slider    = useRef();
-  const workheaing    = useRef();
+  const component  = useRef();
+  const slider     = useRef();
+  const workheaing = useRef();
+
 
 
   
   useLayoutEffect(() => {
+    if(!(window.innerWidth<=500)){
     let ctx = gsap.context(() => {
       let panels = gsap.utils.toArray(".panel");
       const tween = gsap.to(panels, {
         xPercent: -100 * (panels.length-1),
         ease: "none",
       });
-     
+      
     ScrollTrigger.create({
         trigger: slider.current,
         pin: true, 
         scrub: 1,
         // snap: 1 / (panels.length - 1),
         end: () => "+=" + slider.current.offsetWidth,
-        markers: true,
         animation: tween,
     })
       
     }, component);
     return () => ctx.revert();
-  }
+  }}
+// ,[window.innerWidth]
   );
-
   return (
     <div className="App" ref={component}>
       <div ref={slider} className="container">
@@ -126,13 +127,13 @@ export default function WorkSection() {
             <h2 ref={workheaing} className="work-head">WORK.</h2>
           </div>
         </div>
-        <div className="panel red red-div">
+        <div className="panel all-projects">
             {work.map((proj)=>{
               return (
                 <div className="project">
                   <ProjectCarousel proj={proj}/>
                   <div className="description">
-                      {proj.description}
+                      <p>{proj.description}</p>
                   </div>
                 </div>
               )
