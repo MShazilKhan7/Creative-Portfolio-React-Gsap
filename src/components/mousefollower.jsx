@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { useLayoutEffect } from "react";
 import gsap from "gsap";
 
 function Follower(params) {

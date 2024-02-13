@@ -18,7 +18,7 @@ function Quotation(params) {
                 // start: 'top center', 
               },
         })
-    })
+    },[])
 
     useEffect(()=>{
         animateQuote();

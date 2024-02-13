@@ -1,10 +1,7 @@
-import React, { useEffect, useRef } from "react";
-import Follower from "./mousefollower";
-import gsap from "gsap";
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Contact(params) {
-     const contactBottomSectionRef = useRef();
     // let tl  = gsap.timeline()
     // useEffect(()=>{
         

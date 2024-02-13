@@ -1,8 +1,5 @@
 import React, { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
-import { TbJewishStarFilled } from "react-icons/tb";
-import { FaStarOfLife } from "react-icons/fa";
-import { TbTopologyStarRing3 } from "react-icons/tb";
 
 function MainHeading(params) {
     // run the animations on mounting 
@@ -16,7 +13,7 @@ function MainHeading(params) {
             stagger: 0.06,
             // ease: "expo",
           });
-    })
+    },[])
 
     const animateSecondHeading = useCallback(()=>{
         gsap.to(mainHeadingRef.current.querySelectorAll(".secondheading span"), {
@@ -26,7 +23,7 @@ function MainHeading(params) {
             // ease: "expo",
 
           });
-    })
+    },[])
 
     console.log(animateFirstHeading)
     useEffect(() => {

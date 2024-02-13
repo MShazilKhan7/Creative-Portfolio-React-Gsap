@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Header(){
     return (
 <>
@@ -16,10 +16,10 @@ function Header(){
             <h2>hellow</h2>
         </div>
         <div className="side-navs">
-            <a href=""><h2>Work</h2></a>
-            <a href=""><h2>About</h2></a>
-            <a href=""><h2>Contact</h2></a>
-            <a href=""><h2>Writes</h2></a>
+            <Link to={'/'}><h2>Work</h2></Link>
+            <Link to={'/'}><h2>About</h2> </Link>
+            <Link to={'/'}><h2>Contact</h2></Link>
+            <Link to={'https://medium.com/@shazilkhannew'}><h2>Writes</h2></Link>
         </div>
    </div>
 </>
