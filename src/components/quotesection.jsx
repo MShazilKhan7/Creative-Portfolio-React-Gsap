@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 // this section is after name section
 gsap.registerPlugin(ScrollTrigger);
@@ -27,7 +27,7 @@ function Quotation(params) {
     return(
         <div ref={quoteContent} className="quotesection">
             <div className="linebox">
-               <div><h2>enthusiatic about Web Technologies</h2></div>
+               <div><h2>enthusiastic about Web Technologies</h2></div>
                <div><h2>and Machine Learning. </h2></div>
                <div><h2>My expertise lies in the art of</h2></div>
                <div><h2>seamlessly merging creativity</h2></div>
