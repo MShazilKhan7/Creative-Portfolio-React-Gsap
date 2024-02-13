@@ -30,7 +30,7 @@ function ProjectCarousel({proj}){
                         <FaLongArrowAltLeft className="left" onClick={()=>goPrev()}/>
                         <FaLongArrowAltRight className="right" onClick={()=>goNext()}/>
                     </div>
-                    <img src={image.url}/>
+                    <img src={image.url} alt="img"/>
                 </div>
                 )
             })}
