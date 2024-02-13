@@ -38,6 +38,10 @@ function MainHeading(params) {
     return(
     <div className="main-heading" ref={mainHeadingRef}>
         <div className="heading-continer">
+            <div className="myquote sm-screen">
+                <div><p>I love to learn </p></div>
+                <div><p> & adopt new things</p></div>
+            </div>
             <h2 className="firstheading">
                 <span>C</span>
                 <span>R</span>

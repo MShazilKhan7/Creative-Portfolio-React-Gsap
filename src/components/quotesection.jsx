@@ -4,13 +4,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 // this section is after name section
 gsap.registerPlugin(ScrollTrigger);
-
 function Quotation(params) {
     const quoteContent  = useRef();
     const animateQuote = useCallback(()=>{
         gsap.to(quoteContent.current.querySelectorAll(".linebox div h2"), {
-            
-            y:"-50px",
+            y:"-70px",
             duration: 1,
             stagger: 0.2,
             scrollTrigger: {
@@ -18,10 +16,7 @@ function Quotation(params) {
                 markers: true,
                 scroller: "body",
                 // start: 'top center', 
-
               },
-
-            
         })
     })
 

@@ -8,41 +8,82 @@ gsap.registerPlugin(ScrollTrigger);
 let work = [
   {
     images: [
-      { 
-        url: './images/browsemovies.jpg',
+      {
+          url:  './images/browseMovies/01.jpg'
       },
-      { 
-        url: './images/01.jpg',
+      {
+        url:  './images/browseMovies/02.jpg'
       },
-      { 
-        url: './images/02.jpg',
+      {
+        url:  './images/browseMovies/03.jpg'
       },
-      { 
-        url: './images/03.jpg',
+      {
+        url:  './images/browseMovies/04.jpg'
+        
       },
-      { 
-        url: './images/04.jpg',
-      },
-    ]
+    ],
+    description: "BROWSE MOVIES | FRONT-END | UI | REACT. Js HTML CSS "
   },
   {
     images: [
-      { 
-        url: './images/browsemovies.jpg',
+      {
+        url:  './images/dashboard/01.jpg'
       },
-      { 
-        url: './images/01.jpg',
+      {
+        url:  './images/dashboard/02.jpg'
       },
-      { 
-        url: './images/02.jpg',
+      {
+        url:  './images/dashboard/03.jpg'
       },
-      { 
-        url: './images/03.jpg',
-      },
-    ]
+    ],
+    description: "DASHBOARD | FRONT-END | UI | HTML CSS JavaScript "
   },
-
-
+  {
+    images: [
+      {
+        url:  './images/restaurant_api/01.jpg'
+      },
+      {
+        url:  './images/restaurant_api/02.jpg'
+      },
+      {
+        url:  './images/restaurant_api/03.jpg'
+      },
+      {
+        url:  './images/restaurant_api/04.jpg'
+      },
+    ],
+    description: "RESTAURANT API DEVELOPMENT | BACKEND | DBSQLite3 | PYTHON | DJANGO | DJANGO REST FRAMEWORK | INSOMNIA CLIENT "
+  },
+  {
+    images: [
+      {
+        url:  './images/cynthia/01.jpg'
+      },
+      {
+        url:  './images/cynthia/02.jpg'
+      },
+      {
+        url:  './images/cynthia/03.jpg'
+      },
+      {
+        url:  './images/cynthia/04.jpg'
+      },
+    ],
+    description: "CREATIVE ANIMATED | PORTFOLIO CLONE | HTML CSS JS & GSAP |"
+  },
+  {
+    images: [
+      {
+        url:  './images/caloriesml/01.jpg'
+      },
+      {
+        url:  './images/caloriesml/02.jpg'
+      },
+    
+    ],
+    description: "MACHINE LEARNING | GRADIENT BOOSTING ALGORITHM | CALORIES BURNT PREDICTION | PYTHON DJANGO HTML CSS BOOTSTRAP |"
+  },
 ]
 
 
@@ -50,6 +91,8 @@ let work = [
 export default function WorkSection() {
   const component = useRef();
   const slider    = useRef();
+  const workheaing    = useRef();
+
 
   
   useLayoutEffect(() => {
@@ -80,17 +123,16 @@ export default function WorkSection() {
       <div ref={slider} className="container">
         <div className="work-container panel blue">
           <div className="work-heading-container">
-            <h2 className="work-head">WORK.</h2>
+            <h2 ref={workheaing} className="work-head">WORK.</h2>
           </div>
         </div>
-
         <div className="panel red red-div">
             {work.map((proj)=>{
               return (
                 <div className="project">
                   <ProjectCarousel proj={proj}/>
                   <div className="description">
-                      BROWSE MOVIES | UI | HTML CSS REACT. Js  
+                      {proj.description}
                   </div>
                 </div>
               )

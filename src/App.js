@@ -5,47 +5,18 @@ import MainHeading from './components/mainheading';
 import Name from './components/namesection';
 import Quotation from './components/quotesection';
 import WorkSection from './components/worksection';
-
-let works = [
-  {
-      url:  './images/browsemovies.png'
-  },
-  {
-      url:  './images/04.jpg'
-  },
-  {
-      url:  '/images/03.jpg'
-  },
-  // {
-  //     url:  '/images/04.jpg'
-  // },
-  // {
-  //     url:  '/images/05.jpg'
-  // },
-  // {
-  //     url:  './images/01.jpg'
-  // },
-  // {
-  //     url:  './images/04.jpg'
-  // },
-  // {
-  //     url:  '/images/03.jpg'
-  // },
-  // {
-  //     url:  '/images/04.jpg'
-  // },
-]
-
-let item = {url: './images/browsemovies.PNG'}
+import Contact from './components/contactsection';
+import Follower from './components/mousefollower';
 function App() {
   return (
     <>
+      <Follower/>
       <Header/>
       <MainHeading/>
       <Name /> 
       <Quotation />
-      <WorkSection item={item}/>
-
+      <WorkSection/>
+      <Contact/>
       {/* <SelectedWork/> */}
     </>
     )

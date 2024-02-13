@@ -25,16 +25,6 @@ body::-webkit-scrollbar{
 }
 
 
-/* html,body{
-  width: 100%;
-  height: 100%;
-  color: var(--font-color);
-} */
-
-/* body::-webkit-scrollbar{
-  display: none;
-} */
-
 
 
 :root{
@@ -47,18 +37,7 @@ body::-webkit-scrollbar{
   src: url(../public/PPNeueMontreal-Medium.f9b3b92f.woff2);
 }
 
-/* .mouse-follower{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  background-color: black;
-  border-radius: 50%;
-  z-index: 9999;
-  transition: all .1s ease-out;
-} */
+
 
 .main{
   background-color: var(--primary-color);
@@ -75,23 +54,15 @@ body::-webkit-scrollbar{
 }
 .name-div {
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   gap: 5px;
-
 }
+
+
 .side-navs{
   display: flex;
   justify-content: center;
   gap: 4px;
-}
-.profile-icon{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  /* background-image: url(./1.png); */
-  background-size: cover;
-  margin-top: -2px;
 }
 
 
@@ -105,14 +76,12 @@ body::-webkit-scrollbar{
   color: var(--font-color);
 }
 
-.main-heading h2 {
+.main-heading h2{
   display: block;
   height: 130px;
   overflow: hidden;
-  padding-left: 20px;
   font-size: 126px; 
   font-family: "ppneue";
-  line-height: 150px;
   font-weight: 500;
   margin-bottom: -20px;
 }
@@ -137,7 +106,6 @@ body::-webkit-scrollbar{
   position: relative;
   overflow: hidden;
   margin-top: 35vh;
-  /* background-color: orange; */
 }
 
 .nameheading div{
@@ -161,6 +129,46 @@ body::-webkit-scrollbar{
   font-weight: normal;
 }
 
+.sm-screen{
+  display: none;
+  text-transform: uppercase;
+  padding-left: 5px;
+  margin-bottom: 1.5rem;
+}
+/* smaller phones */
+@media only screen and (max-width: 500px) {
+  .undergrad,.hellow{
+    display: none;
+  }
+  .header{
+    justify-content: space-between;
+  }
+  .sm-screen{
+    display: block;
+  }
+  .main-heading .heading-continer{
+    padding: 130px 20px;
+  }
+  .heading-continer h2{
+    font-size: 52px;
+    height: 60px;
+  }
+  .nameheading{
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 0;
+    height: max-content;
+  }
+  .nameheading div{
+    padding: 0 20px;
+  } 
+  .nameheading .quote{
+    display: none;
+  }
+  .nameheading .name h2{
+    font-size: 52px;
+  }
+}
 
 /* quote section after name */
 
@@ -175,7 +183,6 @@ body::-webkit-scrollbar{
   padding: 0 20px;
   width: 100%;
   /* height: 350px; */
-
 }
 .quotesection .linebox div{
   height: 50px;
@@ -188,10 +195,27 @@ body::-webkit-scrollbar{
   font-family: "ppneue";
   font-weight: 400;
   text-transform: uppercase;
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
+@media only screen and (max-width: 500px){
+  .quotesection{
+    padding: 180px 0;
+  }
+ 
+  .quotesection  .linebox div{
+    height: fit-content;
+  }
 
+  .quotesection  .linebox div h2{
+    font-size: 30px;
+  }
+
+  .quotesection  .linebox div{
+    height: 70px;
+  }
+
+}
 
 /* selected work section */
 .container{
@@ -216,10 +240,12 @@ body::-webkit-scrollbar{
   padding: .8rem 2rem 0 .3rem;
   display: flex;
   align-items: center;
-  text-align: center;
+  /* text-align: center; */
   font-size: 2vw;
   color: white;
   font-size: "ppneue";
+  /* background-color: red; */
+
 }
 
 .work-head{
@@ -245,8 +271,8 @@ body::-webkit-scrollbar{
 .project .image img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position:left;
+  /* object-fit: cover; */
+  /* object-position:left; */
 }
 .controllers{
   width: 100%;
@@ -254,7 +280,7 @@ body::-webkit-scrollbar{
   justify-content: space-between;
   position: absolute;
   bottom: 0;
-  color: #FFF;
+  color: rgb(88, 86, 86);
   font-size: 2rem;
   padding: 0 .5rem;
 }
@@ -285,3 +311,49 @@ body::-webkit-scrollbar{
   background-color: black;
   width: calc(400vw - 100vw);
 }
+
+
+
+/* contact */
+.contact-sect{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-sect .top{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 22px;
+  padding: 6rem;
+}
+.contact-sect .bottom{
+  padding: 0 2.5rem;
+}
+.contact-sect .bottom h1{
+  font-size: 100px;
+  font-weight: 400;
+  word-break: break-all;
+  text-decoration: underline;
+  line-height: 1;
+  color: black;
+}
+
+
+/* mouse followe */
+
+.follower{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  scale: 0;
+}
+
+
