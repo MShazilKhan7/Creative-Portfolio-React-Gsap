@@ -25,7 +25,7 @@ function ProjectCarousel({proj}){
         <div ref={projectImagesRef} className="project-images">
             {proj.images.map((image,index)=>{
                 return (
-                <div style={{left: `${index*100}%`}} className="image">
+                <div key={index} style={{left: `${index*100}%`}} className="image">
                     <div className="controllers">
                         <FaLongArrowAltLeft className="left" onClick={()=>goPrev()}/>
                         <FaLongArrowAltRight className="right" onClick={()=>goNext()}/>

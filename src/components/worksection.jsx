@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import ProjectCarousel from "./carousel";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -89,36 +89,53 @@ let work = [
 
 
 export default function WorkSection() {
-  const component  = useRef();
-  const slider     = useRef();
+  const component = useRef();
+  const slider = useRef();
   const workheaing = useRef();
+  const [isScrollTriggerActive, setIsScrollTriggerActive] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1000 && !isScrollTriggerActive) {
+        setIsScrollTriggerActive(true);
+      } else if (window.innerWidth <= 1000 && isScrollTriggerActive) {
+        setIsScrollTriggerActive(false);
+      }
+    };
 
 
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Check initial screen size
 
-  
-  useLayoutEffect(() => {
-    if(!(window.innerWidth<=500)){
-    let ctx = gsap.context(() => {
-      let panels = gsap.utils.toArray(".panel");
-      const tween = gsap.to(panels, {
-        xPercent: -100 * (panels.length-1),
-        ease: "none",
-      });
-      
-    ScrollTrigger.create({
-        trigger: slider.current,
-        pin: true, 
-        scrub: 1,
-        // snap: 1 / (panels.length - 1),
-        end: () => "+=" + slider.current.offsetWidth,
-        animation: tween,
-    })
-      
-    }, component);
-    return () => ctx.revert();
-  }}
-// ,[window.innerWidth]
-  );
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+
+  }, [isScrollTriggerActive]);
+
+  useEffect(() => {
+    if (isScrollTriggerActive) {
+      let ctx = gsap.context(() => {
+        let panels = gsap.utils.toArray(".panel");
+        const tween = gsap.to(panels, {
+          xPercent: -100 * (panels.length - 1),
+          ease: "none",
+        });
+
+        ScrollTrigger.create({
+          trigger: slider.current,
+          pin: true,
+          scrub: 1,
+          // snap: 1 / (panels.length - 1),
+          end: () => "+=" + slider.current.offsetWidth,
+          animation: tween,
+        });
+      }, component);
+
+      return () => ctx.revert();
+    }
+  }, [isScrollTriggerActive]);
+
   return (
     <div className="App" ref={component}>
       <div ref={slider} className="container">
@@ -128,10 +145,10 @@ export default function WorkSection() {
           </div>
         </div>
         <div className="panel all-projects">
-            {work.map((proj)=>{
+            {work.map((proj,index)=>{
               return (
-                <div className="project">
-                  <ProjectCarousel proj={proj}/>
+                <div key={index} className="project">
+                  <ProjectCarousel  proj={proj}/>
                   <div className="description">
                       <p>{proj.description}</p>
                   </div>

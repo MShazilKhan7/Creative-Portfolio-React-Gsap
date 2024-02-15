@@ -2,13 +2,18 @@ import React, { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 
+
 // this section is after name section
 gsap.registerPlugin(ScrollTrigger);
+
+
 function Quotation(params) {
+
+    
     const quoteContent  = useRef();
     const animateQuote = useCallback(()=>{
         gsap.to(quoteContent.current.querySelectorAll(".linebox div h2"), {
-            y:"-70px",
+            y:"-50px",
             duration: 1,
             stagger: 0.2,
             scrollTrigger: {
@@ -27,12 +32,11 @@ function Quotation(params) {
         <div ref={quoteContent} className="quotesection">
             <div className="linebox">
                <div><h2>enthusiastic about Web Technologies</h2></div>
-               <div><h2>and Machine Learning. </h2></div>
-               <div><h2>My expertise lies in the art of</h2></div>
-               <div><h2>seamlessly merging creativity</h2></div>
-               <div><h2>with user-friendly interfaces,</h2></div>
-               <div><h2>resulting in truly memorable web</h2></div>
-               <div><h2>experiences.</h2></div>
+               <div><h2>and Machine Learning. My expertise</h2></div>
+               <div><h2>lies in the art of seamlessly</h2></div>
+               <div><h2> merging creativity with user-friendly</h2></div>
+               <div><h2>interfaces, resulting in truly memorable</h2></div>
+               <div><h2>web experiences.</h2></div>
             </div>
         </div>
     )
