@@ -4,13 +4,27 @@
   box-sizing: border-box;
 }
 
-
+.initial{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  font-family: "ppneue";
+}
 html {
   overflow-y: scroll;
   height: 100%;
 }
 body {
   overflow-x: hidden;
+}
+
+html{
+  overflow: hidden;
+}
+.scroll-enable{
+  overflow-y: visible;
 }
 
 html,
@@ -373,7 +387,6 @@ a:hover::after {
   font-family: "ppneue";
   font-size: 90px;
   margin-bottom: 50%;
-  /* background-color: olive; */
 }
 .socials{
   width: 40%;
@@ -457,7 +470,6 @@ a:hover::after {
     .quotesection {
       padding-left: 0;
       padding-right: 0;
-      background-color: wheat;
     }
     .quotesection .linebox div h2 {
       font-size: 15px;

@@ -5,10 +5,12 @@ import Name from './components/namesection';
 import Quotation from './components/quotesection';
 import WorkSection from './components/worksection';
 import Contact from './components/contactsection';
-
+import Initial from './components/initial';
 function App() {
+   
   return (
     <>
+      <Initial/>
       <Header/>
       <MainHeading/>
       <Name /> 
