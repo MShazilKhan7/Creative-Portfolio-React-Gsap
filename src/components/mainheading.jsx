@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
-import Initial from "./initial";
 function MainHeading(params) {
     // run the animations on mounting 
     const mainHeadingRef   = useRef();
@@ -28,7 +27,6 @@ function MainHeading(params) {
 
     console.log(animateFirstHeading)
     useEffect(() => {
-        const t = gsap.timeline();
         animateFirstHeading();
         animateSecondHeading();
     }, [animateFirstHeading, animateSecondHeading]);
